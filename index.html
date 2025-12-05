@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Meet Patel | Project Manager & Senior Flutter Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Meet Patel – Project Manager & Senior Flutter Engineer (Flutter) specializing in pixel-perfect UI/UX and scalable cross-platform apps."
+  />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #050816;
+      color: #f9fafb;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(5, 8, 22, 0.85);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .nav-left {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .nav-right a {
+      margin-left: 1.5rem;
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    .nav-right a:hover {
+      opacity: 1;
+    }
+
+    section {
+      padding: 4.5rem 0;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(55, 65, 81, 0.4);
+      color: #e5e7eb;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 {
+      font-size: clamp(2.3rem, 4vw, 3rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+    }
+
+    p {
+      color: #d1d5db;
+      margin-bottom: 0.75rem;
+    }
+
+    .muted {
+      color: #9ca3af;
+      font-size: 0.9rem;
+    }
+
+    .hero {
+      display: grid;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      }
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title-span {
+      background: linear-gradient(120deg, #22d3ee, #a855f7, #f97316);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .chip {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: #e5e7eb;
+    }
+
+    .hero-cta {
+      margin-top: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.13s ease, box-shadow 0.13s ease, background 0.13s ease, border 0.13s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #22c55e, #22d3ee);
+      color: #020617;
+      font-weight: 600;
+      box-shadow: 0 12px 30px rgba(34, 211, 238, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(34, 211, 238, 0.32);
+    }
+
+    .btn-ghost {
+      border-color: rgba(148, 163, 184, 0.8);
+      color: #e5e7eb;
+      background: transparent;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.8);
+      transform: translateY(-1px);
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.18), transparent 55%),
+        radial-gradient(circle at bottom, rgba(139, 92, 246, 0.18), transparent 55%);
+      border-radius: 1.5rem;
+      padding: 1.75rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-metric {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .hero-metric span {
+      font-size: 0.85rem;
+      color: #9ca3af;
+      font-weight: 400;
+    }
+
+    .hero-metric + .hero-metric {
+      margin-top: 0.7rem;
+    }
+
+    .section-header {
+      margin-bottom: 2rem;
+    }
+
+    .section-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 900px) {
+      .two-col {
+        grid-template-columns: 1.1fr 1.1fr;
+      }
+    }
+
+    .card {
+      border-radius: 1.25rem;
+      padding: 1.35rem 1.4rem;
+      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.98));
+      border: 1px solid rgba(148, 163, 184, 0.45);
+    }
+
+    .card-header-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.35rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: #cbd5f5;
+    }
+
+    ul {
+      margin-left: 1.1rem;
+      margin-top: 0.35rem;
+    }
+
+    ul li {
+      font-size: 0.9rem;
+      color: #d1d5db;
+      margin-bottom: 0.35rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+
+    .pill {
+      font-size: 0.8rem;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(31, 41, 55, 0.9);
+      border: 1px solid rgba(75, 85, 99, 0.9);
+      color: #e5e7eb;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1.1fr 1fr;
+      }
+    }
+
+    .contact-list p {
+      margin-bottom: 0.4rem;
+    }
+
+    .footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 1.5rem 0 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #9ca3af;
+    }
+
+    .link {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 3px;
+    }
+
+    .form-group {
+      margin-bottom: 0.75rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      color: #e5e7eb;
+      margin-bottom: 0.25rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.55rem 0.7rem;
+      border-radius: 0.6rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.8);
+      color: #f9fafb;
+      font-size: 0.9rem;
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #22d3ee;
+      box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.4);
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <header>
+    <div class="container nav">
+      <div class="nav-left">MEET PATEL</div>
+      <nav class="nav-right">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="container" id="top">
+      <div class="hero">
+        <div>
+          <span class="tag">Project Manager & Senior Flutter Engineer</span>
+          <h1>
+            I build <span class="hero-title-span">pixel-perfect Flutter apps</span> and user journeys that convert.
+          </h1>
+          <p class="hero-sub">
+            I’m a hybrid <strong>Project Manager + Sr. Flutter Engineer</strong> with 3.9+ years of experience shipping
+            scalable cross-platform apps and fixing messy UX with clean architecture and better flows.
+          </p>
+          <p class="muted">
+            From 1K+ downloads in the first month to a music app crossing 100K+ installs, my work sits where
+            <strong>product, design, and engineering</strong> meet.
+          </p>
+
+          <div class="hero-chip-row">
+            <span class="chip">Flutter (Dart)</span>
+            <span class="chip">Clean Architecture</span>
+            <span class="chip">GetX / Provider / MobX</span>
+            <span class="chip">UI/UX Flows</span>
+            <span class="chip">Agile & Sprints</span>
+          </div>
+
+          <div class="hero-cta">
+            <a href="#contact"><button class="btn-primary">Hire Me</button></a>
+            <!-- Replace href with actual resume link when ready -->
+            <a href="#" onclick="alert('Hook this to your resume PDF.'); return false;">
+              <button class="btn-ghost">Download Resume</button>
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h3 style="margin-bottom: 0.7rem;">Snapshot</h3>
+          <p class="hero-metric">3.9+ years <span>Flutter & product delivery</span></p>
+          <p class="hero-metric">25–30% <span>user growth on a digital product</span></p>
+          <p class="hero-metric">100K+ <span>downloads on a music app</span></p>
+          <p class="hero-metric">1K+ <span>downloads in month one in a niche market</span></p>
+        </aside>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- ABOUT -->
+    <section class="container" id="about">
+      <div class="section-header">
+        <span class="tag">About</span>
+        <h2>Who I am</h2>
+      </div>
+      <div class="section-grid two-col">
+        <div>
+          <p>
+            I’m a <strong>Project Manager & Senior Software Engineer (Flutter)</strong> based in Ahmedabad, India.
+            I help companies turn product ideas into <strong>real apps</strong> with clean architecture, reliable
+            state management, and user journeys that actually make sense.
+          </p>
+          <p>
+            Over the last 3.9+ years, I’ve worked with healthtech, telemedicine, packaging, real estate, and consumer
+            apps, always focused on:
+          </p>
+          <ul>
+            <li>Designing <strong>pixel-perfect UI</strong> that matches or improves the design system.</li>
+            <li>Building <strong>scalable Flutter architectures</strong> (MVC, MVVM) ready for growth.</li>
+            <li>Running <strong>efficient sprints</strong> with clear communication and fewer bottlenecks.</li>
+          </ul>
+        </div>
+        <div>
+          <p>
+            Some results I’m proud of:
+          </p>
+          <ul>
+            <li>Guided a product to <strong>25–30% user growth</strong> through better UX and clear roadmapping.</li>
+            <li>Helped a mental health app hit <strong>1,000+ downloads in the first month</strong> in a niche market.</li>
+            <li>Built a music app that crossed <strong>100,000+ downloads</strong> across platforms.</li>
+          </ul>
+          <p class="muted">
+            My sweet spot: sitting between <strong>founders, designers, and developers</strong> to align vision,
+            tech, and UX into one coherent ship-ready product.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- EXPERIENCE -->
+    <section class="container" id="experience">
+      <div class="section-header">
+        <span class="tag">Experience</span>
+        <h2>Where I’ve been</h2>
+      </div>
+
+      <div class="section-grid">
+        <div class="card">
+          <div class="card-header-line">
+            <div>
+              <h3>Sr. Software Engineer (Flutter) / Project Manager</h3>
+              <p class="muted">Helmsman Consultancy · Sept 2024 – Aug 2025</p>
+            </div>
+            <span class="badge">PM + Dev Lead</span>
+          </div>
+          <ul>
+            <li>Led end-to-end delivery of cross-platform digital products from concept to deployment.</li>
+            <li>Managed cross-functional teams and aligned product decisions with business goals.</li>
+            <li>Optimized user journeys by removing redundant clicks and closing UX loopholes.</li>
+            <li>Guided clients in product strategy, contributing to <strong>25–30% user growth</strong>.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header-line">
+            <div>
+              <h3>Software Engineer (Flutter)</h3>
+              <p class="muted">Helmsman Consultancy · Jun 2024 – Aug 2024</p>
+            </div>
+            <span class="badge">Flutter</span>
+          </div>
+          <ul>
+            <li>Built cross-platform apps with pixel-perfect UI and smooth UX.</li>
+            <li>Turned product requirements into working, production-ready features.</li>
+            <li>Collaborated with stakeholders to capture feedback and refine releases.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header-line">
+            <div>
+              <h3>Software Engineer (Flutter)</h3>
+              <p class="muted">SolGuruz LLP · Jun 2022 – May 2024</p>
+            </div>
+            <span class="badge">Flutter</span>
+          </div>
+          <ul>
+            <li>Developed Flutter apps using <strong>MVC & MVVM</strong> patterns.</li>
+            <li>Published Android & iOS builds to Play Store and App Store.</li>
+            <li>Used ClickUp to manage sprints and ensure timely delivery.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header-line">
+            <div>
+              <h3>Software Engineer (Flutter Intern)</h3>
+              <p class="muted">SolGuruz LLP · Dec 2021 – May 2022</p>
+            </div>
+            <span class="badge">Intern</span>
+          </div>
+          <ul>
+            <li>Built pixel-perfect UI from scratch following Flutter best practices.</li>
+            <li>Learned and applied state management, responsive layouts, and API integration.</li>
+            <li>Worked with Git, documentation, and team communication from day one.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- PROJECTS -->
+    <section class="container" id="projects">
+      <div class="section-header">
+        <span class="tag">Projects</span>
+        <h2>Selected work</h2>
+      </div>
+
+      <div class="section-grid two-col">
+        <div class="card">
+          <div class="card-header-line">
+            <h3>Humann HealthTech Global</h3>
+            <span class="badge">Mental Health Platform</span>
+          </div>
+          <p class="muted">Project Manager · Flutter · GetX · Firebase · Razorpay · Agora</p>
+          <ul>
+            <li>Led client & stakeholder meetings and translated requirements into dev tasks.</li>
+            <li>Removed <strong>10+ redundant screens</strong>, simplifying navigation and improving engagement.</li>
+            <li>Improved delivery cycles with better sprint planning and cross-team communication.</li>
+            <li>Helped app reach <strong>1,000+ downloads in the first month</strong> in a niche mental health niche.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header-line">
+            <h3>PanMedical</h3>
+            <span class="badge">Telemedicine</span>
+          </div>
+          <p class="muted">Sr Flutter Engineer / PM · Flutter · GetX · Firebase · Cashfree</p>
+          <ul>
+            <li>Built the platform from scratch with scalable architecture and consistent UI.</li>
+            <li>Owned daily client communication and milestone planning.</li>
+            <li>Optimized patient–doctor consultation flows to reduce friction.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header-line">
+            <h3>Kypson</h3>
+            <span class="badge">Custom Packaging</span>
+          </div>
+          <p class="muted">Flutter · Firebase Auth · MobX · REST APIs</p>
+          <ul>
+            <li>Developed a modern platform for businesses to design & procure custom packaging.</li>
+            <li>Designed responsive, pixel-perfect UI and ensured smooth UX across devices.</li>
+            <li>Participated in code reviews to maintain quality and reuse.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header-line">
+            <h3>Real Estate App</h3>
+            <span class="badge">FinTech / Property</span>
+          </div>
+          <p class="muted">Flutter · GetX · Provider · Firebase</p>
+          <ul>
+            <li>Designed and implemented UI for property management & mortgage tracking.</li>
+            <li>Integrated financial tools: stamp duty, repayment, borrowing capacity.</li>
+            <li>Built reporting dashboards & visualizations for expenses, tax, and property value.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header-line">
+            <h3>Music App</h3>
+            <span class="badge">100K+ Downloads</span>
+          </div>
+          <p class="muted">Flutter · Firebase · MobX · Provider</p>
+          <ul>
+            <li>Built a music streaming app with robust playback and playlist management.</li>
+            <li>Implemented search & discovery by genre, artist, and album.</li>
+            <li>Contributed to the app scaling beyond <strong>100,000+ downloads</strong>.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- SKILLS -->
+    <section class="container" id="skills">
+      <div class="section-header">
+        <span class="tag">Skills</span>
+        <h2>What I work with</h2>
+      </div>
+
+      <div class="section-grid two-col">
+        <div>
+          <h3>Core</h3>
+          <div class="pill-row">
+            <span class="pill">Flutter (Dart)</span>
+            <span class="pill">MVC / MVVM</span>
+            <span class="pill">GetX</span>
+            <span class="pill">Provider</span>
+            <span class="pill">MobX</span>
+            <span class="pill">REST APIs</span>
+            <span class="pill">Firebase</span>
+          </div>
+
+          <h3 style="margin-top: 1.4rem;">Product & Process</h3>
+          <div class="pill-row">
+            <span class="pill">Agile & Scrum</span>
+            <span class="pill">Sprint Planning</span>
+            <span class="pill">Client Communication</span>
+            <span class="pill">Stakeholder Management</span>
+            <span class="pill">Team Leadership</span>
+            <span class="pill">Code Reviews</span>
+          </div>
+        </div>
+
+        <div>
+          <h3>Tools</h3>
+          <div class="pill-row">
+            <span class="pill">VS Code</span>
+            <span class="pill">Xcode</span>
+            <span class="pill">Postman</span>
+            <span class="pill">Swagger</span>
+            <span class="pill">ClickUp</span>
+            <span class="pill">Slack</span>
+            <span class="pill">GitHub</span>
+            <span class="pill">GitLab</span>
+            <span class="pill">Bitbucket</span>
+            <span class="pill">Firebase Console</span>
+            <span class="pill">Play Console</span>
+            <span class="pill">App Store Connect</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" />
+
+    <!-- CONTACT -->
+    <section class="container" id="contact">
+      <div class="section-header">
+        <span class="tag">Contact</span>
+        <h2>Let’s work together</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-list">
+          <p>
+            Have a Flutter project, MVP idea, or an app that needs better UX flows? I can help you plan it, architect it,
+            and ship it.
+          </p>
+          <p><strong>Location:</strong> Ahmedabad, India</p>
+          <p><strong>Email:</strong> <a href="mailto:patelmit001@gmail.com" class="link">patelmit001@gmail.com</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+919429326620" class="link">+91 94293 26620</a></p>
+          <p><strong>Profiles:</strong></p>
+          <p class="muted">
+            LinkedIn · GitHub · StackOverflow  
+            <!-- replace with real profile links when you add them -->
+          </p>
+        </div>
+
+        <div class="card">
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" type="text" placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="you@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="message">Project / Message</label>
+              <textarea id="message" placeholder="Tell me about your project, timeline, and budget."></textarea>
+            </div>
+            <button type="button" class="btn-primary" onclick="alert('Wire this form to your backend or service like Formspree/EmailJS.');">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © <span id="year"></span> Meet Patel · Built with Flutter energy in HTML.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
